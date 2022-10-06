@@ -50,6 +50,16 @@ keymap('n', '<a-8>', ':BufferLineGoToBuffer8<cr>', s_nr)
 keymap('n', '<a-9>', ':BufferLineGoToBuffer9<cr>', s_nr)
 keymap('n', '<a-->', ':BufferLineCyclePrev<cr>', s_nr)
 keymap('n', '<a-=>', ':BufferLineCycleNext<cr>', s_nr)
+keymap('n', '1q', '<a-1><a-q>', s_r)
+keymap('n', '2q', '<a-2><a-q>', s_r)
+keymap('n', '3q', '<a-3><a-q>', s_r)
+keymap('n', '4q', '<a-4><a-q>', s_r)
+keymap('n', '5q', '<a-5><a-q>', s_r)
+keymap('n', '6q', '<a-6><a-q>', s_r)
+keymap('n', '7q', '<a-7><a-q>', s_r)
+keymap('n', '8q', '<a-8><a-q>', s_r)
+keymap('n', '9q', '<a-9><a-q>', s_r)
+
 
 -----------------
 --- telescope ---

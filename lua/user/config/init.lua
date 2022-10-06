@@ -26,8 +26,7 @@ M.setup = function()
         local file = "user.config." .. fname
         local status_ok, _ = pcall(require, file)
         if not status_ok then
-            vim.o.fname = fname
-            vim.cmd[[normal! :echo "Failed loading" . fname]]
+            vim.cmd[[normal! :echo "Failed loading" .. fname]]
         end
     end
 
