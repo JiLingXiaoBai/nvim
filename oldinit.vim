@@ -5,10 +5,7 @@
 
 call plug#begin(g:pluggedpath)
 
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
-Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'godlygeek/tabular'

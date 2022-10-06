@@ -35,6 +35,8 @@ end
 local function install_plugins(use)
     -- have packer manage itself
     use "wbthomason/packer.nvim"
+    -- impatient
+    use "lewis6991/impatient.nvim"
     -- notify
     use "rcarriga/nvim-notify" 
     -- icons
@@ -67,7 +69,10 @@ local function install_plugins(use)
     use {"glepnir/dashboard-nvim"}
     -- comment
     use {"numToStr/Comment.nvim"}
-
+    -- surround
+    use {"kylechui/nvim-surround", tag = "*"}
+    -- autopairs
+    use {"windwp/nvim-autopairs"}
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()

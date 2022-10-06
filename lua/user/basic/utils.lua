@@ -22,7 +22,7 @@ M.close_buffer = function()
 
     local winnum = 0
     for i, v in pairs(nvim_list_wins) do
-        if buflisted(winbufnr(i)) == 1 then
+        if buflisted(winbufnr(v)) == 1 then
             winnum = winnum + 1
         end
     end
@@ -34,7 +34,7 @@ M.close_buffer = function()
 
     local bufnum = 0
     for i, v in pairs(nvim_list_bufs) do
-        if buflisted(i) == 1 then
+        if buflisted(v) == 1 then
             bufnum = bufnum + 1
         end
     end
@@ -43,7 +43,7 @@ M.close_buffer = function()
         execute "quit"
         return
     else
-        execute [[normal! :bp\<bar>bd#\<cr>]]
+        execute "bp|bd#"
         return
     end
 end
