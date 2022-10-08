@@ -50,6 +50,6 @@ illuminate.configure({
     large_file_overrides = nil,
 })
 
---vim.cmd[[hi def IlluminatedWordText guifg=#000000 guibg=#FD971F gui=NONE]]
+vim.cmd[[hi def IlluminatedWordText guibg=#40454E gui=NONE]]
 vim.cmd[[hi def IlluminatedWordRead guibg=#40454E gui=NONE]]
 vim.cmd[[hi def IlluminatedWordWrite guibg=#40454E gui=NONE]]
