@@ -89,6 +89,8 @@ local function install_plugins(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
+    -- highlight same words under cursor by lsp
+    use "RRethy/vim-illuminate"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()

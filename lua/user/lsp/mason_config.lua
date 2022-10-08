@@ -90,7 +90,9 @@ masonlspconfig.setup({
     automatic_installation = false,
 })
 
-local serverList = masonlspconfig.get_installed_servers()
+
+local lspconfig = require("lspconfig")
+
 local opts = {
     on_attach = require("user.lsp.lsp_handler").on_attach,
     capabilities = require("user.lsp.lsp_handler").capabilities,
@@ -98,15 +100,16 @@ local opts = {
         debounce_text_changes = 150,
     }
 }
-for i, serverName in pairs(serverList) do
-    if serverName == "clangd" then
-        --     local clangd_opts = require("user.lsp.settings.clangd")
-        --     opts = vim.tbl_deep_extend("force", clangd_opts, opts)
-    end
-    if serverName == "sumneko_lua" then
-        --     local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-        --     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-    end
-end
+
 masonlspconfig.setup_handlers({
+    ["clangd"] = function()
+        -- local clangd_opts = require("user.lsp.settings.clangd")
+        -- opts = vim.tbl_deep_extend("force", clangd_opts, opts)
+        lspconfig["clangd"].setup{opts}
+    end,
+    ["sumneko_lua"] = function()
+        -- local sumneko_opts = require("user.lsp.settings.sumneko_lua")
+        -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+        lspconfig["sumneko_lua"].setup{opts}
+    end,
 })
