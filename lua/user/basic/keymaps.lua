@@ -23,10 +23,10 @@ keymap('t', '<c-t>', [[<Cmd>exe v:count1 . "ToggleTerm"<cr>]], s_nr)
 -- split windows --
 -------------------
 -- cursor move to another window
-keymap('n', '<c-h>', '<c-w>h', s_nr)
-keymap('n', '<c-j>', '<c-w>j', s_nr)
-keymap('n', '<c-k>', '<c-w>k', s_nr)
-keymap('n', '<c-l>', '<c-w>l', s_nr)
+keymap('n', '<leader>h', '<c-w>h', s_nr)
+keymap('n', '<leader>j', '<c-w>j', s_nr)
+keymap('n', '<leader>k', '<c-w>k', s_nr)
+keymap('n', '<leader>l', '<c-w>l', s_nr)
 -- split a new window
 keymap('n', '<a-h>', ':set nosplitright<cr>:vsplit<cr>', s_nr)
 keymap('n', '<a-l>', ':set splitright<cr>:vsplit<cr>', s_nr)
