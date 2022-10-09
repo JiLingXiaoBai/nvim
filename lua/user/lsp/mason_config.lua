@@ -105,11 +105,11 @@ masonlspconfig.setup_handlers({
     ["clangd"] = function()
         -- local clangd_opts = require("user.lsp.settings.clangd")
         -- opts = vim.tbl_deep_extend("force", clangd_opts, opts)
-        lspconfig["clangd"].setup{opts}
+        lspconfig["clangd"].setup(opts)
     end,
     ["sumneko_lua"] = function()
         -- local sumneko_opts = require("user.lsp.settings.sumneko_lua")
         -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-        lspconfig["sumneko_lua"].setup{opts}
+        lspconfig["sumneko_lua"].setup(opts)
     end,
 })

@@ -1,8 +1,6 @@
 
 local s_nr = {silent = true, noremap = true}
-local s_r = {silent = true, noremap = false}
 local ns_nr = {silent = false, noremap = true}
-local ns_r = {silent = false, noremap = false}
 local keymap = vim.api.nvim_set_keymap
 
 vim.g.mapleader = ' '
@@ -39,6 +37,7 @@ keymap('n', '<leader><left>', ':vertical resize +5<cr>', s_nr)
 keymap('n', '<leader><right>', ':vertical resize -5<cr>', s_nr)
 -- buffer select and close
 keymap('n', '<a-q>', [[:lua require('user.basic.utils').close_buffer()<cr>]], s_nr)
+keymap('n', '<leader>dq', [[:diffoff!<cr>:lua require('user.basic.utils').close_buffer()<cr>]], s_nr)
 keymap('n', '<a-1>', ':BufferLineGoToBuffer1<cr>', s_nr)
 keymap('n', '<a-2>', ':BufferLineGoToBuffer2<cr>', s_nr)
 keymap('n', '<a-3>', ':BufferLineGoToBuffer3<cr>', s_nr)
@@ -51,16 +50,15 @@ keymap('n', '<a-9>', ':BufferLineGoToBuffer9<cr>', s_nr)
 keymap('n', '<a-->', ':BufferLineCyclePrev<cr>', s_nr)
 keymap('n', '<a-=>', ':BufferLineCycleNext<cr>', s_nr)
 keymap('n', '<leader>q', ':BufferLinePickClose<cr>', ns_nr)
-keymap('n', '1q', [[:lua require('user.basic.utils').close_buffer_num(1)<cr>]], s_r)
-keymap('n', '2q', [[:lua require('user.basic.utils').close_buffer_num(2)<cr>]], s_r)
-keymap('n', '3q', [[:lua require('user.basic.utils').close_buffer_num(3)<cr>]], s_r)
-keymap('n', '4q', [[:lua require('user.basic.utils').close_buffer_num(4)<cr>]], s_r)
-keymap('n', '5q', [[:lua require('user.basic.utils').close_buffer_num(5)<cr>]], s_r)
-keymap('n', '6q', [[:lua require('user.basic.utils').close_buffer_num(6)<cr>]], s_r)
-keymap('n', '7q', [[:lua require('user.basic.utils').close_buffer_num(7)<cr>]], s_r)
-keymap('n', '8q', [[:lua require('user.basic.utils').close_buffer_num(8)<cr>]], s_r)
-keymap('n', '9q', [[:lua require('user.basic.utils').close_buffer_num(9)<cr>]], s_r)
-
+keymap('n', '1q', [[:lua require('user.basic.utils').close_buffer_num(1)<cr>]], s_nr)
+keymap('n', '2q', [[:lua require('user.basic.utils').close_buffer_num(2)<cr>]], s_nr)
+keymap('n', '3q', [[:lua require('user.basic.utils').close_buffer_num(3)<cr>]], s_nr)
+keymap('n', '4q', [[:lua require('user.basic.utils').close_buffer_num(4)<cr>]], s_nr)
+keymap('n', '5q', [[:lua require('user.basic.utils').close_buffer_num(5)<cr>]], s_nr)
+keymap('n', '6q', [[:lua require('user.basic.utils').close_buffer_num(6)<cr>]], s_nr)
+keymap('n', '7q', [[:lua require('user.basic.utils').close_buffer_num(7)<cr>]], s_nr)
+keymap('n', '8q', [[:lua require('user.basic.utils').close_buffer_num(8)<cr>]], s_nr)
+keymap('n', '9q', [[:lua require('user.basic.utils').close_buffer_num(9)<cr>]], s_nr)
 -----------------
 --- telescope ---
 -----------------

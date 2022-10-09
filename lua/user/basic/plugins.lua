@@ -91,6 +91,8 @@ local function install_plugins(use)
     }
     -- highlight same words under cursor by lsp
     use "RRethy/vim-illuminate"
+    -- gitsigns
+    use "lewis6991/gitsigns.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
