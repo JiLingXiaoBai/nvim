@@ -61,15 +61,9 @@ nnoremap gt :<C-u>action GotoTest<CR>
 nnoremap gr :<C-u>action RecentFiles<CR>
 nnoremap gh :<C-u>action Back<CR>
 nnoremap gl :<C-u>action Forward<CR>
-
-nnoremap ta :<C-u>action Annotate<cr>
-nnoremap tb :<C-u>action ToggleLineBreakpoint<cr>
-nnoremap tm :<C-u>action ToggleBookmark<cr>
-nnoremap tp :<C-u>action ActivateProjectToolWindow<CR>
-
-nnoremap <C-f> :<C-u>action ReformatCode<CR>
 nnoremap J :<C-u>action MethodDown<CR>
 nnoremap K :<C-u>action MethodUp<CR>
+nnoremap <C-f> :<C-u>action ReformatCode<CR>
 nnoremap <S-Down> :<C-u>action EditorCloneCaretBelow<CR>
 nnoremap <S-Up> :<C-u>action EditorCloneCaretAbove<CR>
 nnoremap <A-j> :<C-u>action MoveLineDown<CR>
@@ -90,6 +84,10 @@ nnoremap <Leader>F :<C-u>action FindInPath<CR>
 vnoremap <Leader>F :<C-u>action FindInPath<CR>
 nnoremap <Leader>h gT
 nnoremap <Leader>l gt
+nnoremap <Leader>a :<C-u>action Annotate<cr>
+nnoremap <Leader>b :<C-u>action ToggleLineBreakpoint<cr>
+nnoremap <Leader>m :<C-u>action ToggleBookmark<cr>
+nnoremap <Leader>p :<C-u>action ActivateProjectToolWindow<CR>
 nnoremap <leader>ns :action NextSplitter<CR>
 nnoremap <leader>ps :action PrevSplitter<CR>
 nnoremap <leader>sh :action SplitHorizontally<CR>
