@@ -33,15 +33,20 @@ set incsearch
 
 "--在搜索时忽略大小写
 set ignorecase
+set smartcase
 
 "--将搜索匹配的文本高亮显示
 set hlsearch
 
 "--设置相对行号 和 当前行的绝对行号
-set number relativenumber
+set number
+"set relativenumber
 
 "--设置返回normal模式时回到英文输入法
 set keep-english-in-normal
+
+"--设置leader键永不超时
+set notimeout
 
 " ================================================================================================
 " No Leader Keymaps
@@ -59,36 +64,29 @@ nnoremap gm :<C-u>action GotoSymbol<CR>
 nnoremap gu :<C-u>action ShowUsages<CR>
 nnoremap gt :<C-u>action GotoTest<CR>
 nnoremap gr :<C-u>action RecentFiles<CR>
-nnoremap gh :<C-u>action Back<CR>
-nnoremap gl :<C-u>action Forward<CR>
 nnoremap J :<C-u>action MethodDown<CR>
 nnoremap K :<C-u>action MethodUp<CR>
-nnoremap <C-f> :<C-u>action ReformatCode<CR>
 nnoremap <S-Down> :<C-u>action EditorCloneCaretBelow<CR>
 nnoremap <S-Up> :<C-u>action EditorCloneCaretAbove<CR>
 nnoremap <A-j> :<C-u>action MoveLineDown<CR>
 nnoremap <A-k> :<C-u>action MoveLineUp<CR>
+nnoremap <C-f> :<C-u>action ReformatCode<CR>
 
 " ================================================================================================
 "️️ Leader Keymaps
 " ================================================================================================
 let mapleader = " "
-nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
-nnoremap <Leader>r :<C-u>action Replace<CR>
-vnoremap <Leader>r :<C-u>action Replace<CR>
-nnoremap <Leader>R :<C-u>action ReplaceInPath<CR>
-vnoremap <Leader>R :<C-u>action ReplaceInPath<CR>
-nnoremap <Leader>f :<C-u>action Find<CR>
-vnoremap <Leader>f :<C-u>action Find<CR>
-nnoremap <Leader>F :<C-u>action FindInPath<CR>
-vnoremap <Leader>F :<C-u>action FindInPath<CR>
-nnoremap <Leader>h gT
-nnoremap <Leader>l gt
-nnoremap <Leader>a :<C-u>action Annotate<cr>
-nnoremap <Leader>b :<C-u>action ToggleLineBreakpoint<cr>
-nnoremap <Leader>m :<C-u>action ToggleBookmark<cr>
-nnoremap <Leader>p :<C-u>action ActivateProjectToolWindow<CR>
-nnoremap <leader>ns :action NextSplitter<CR>
-nnoremap <leader>ps :action PrevSplitter<CR>
+nnoremap <leader>h gT
+nnoremap <leader>l gt
+nnoremap <leader>nh :<C-u>nohl<CR>
+nnoremap <leader>r :<C-u>action RenameElement<CR>
+nnoremap <leader>o :<C-u>action RecentProjectListGroup<CR>
+nnoremap <leader>a :<C-u>action Annotate<cr>
+nnoremap <leader>b :<C-u>action ToggleLineBreakpoint<cr>
+nnoremap <leader>m :<C-u>action ToggleBookmark<cr>
+nnoremap <leader>p :<C-u>action ActivateProjectToolWindow<CR>
+nnoremap <leader>sn :action NextSplitter<CR>
+nnoremap <leader>sp :action PrevSplitter<CR>
 nnoremap <leader>sh :action SplitHorizontally<CR>
 nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sc :action Unsplit<CR>
