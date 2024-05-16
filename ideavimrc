@@ -72,10 +72,14 @@ nnoremap <A-j> :<C-u>action MoveLineDown<CR>
 nnoremap <A-k> :<C-u>action MoveLineUp<CR>
 vnoremap <A-j> :<C-u>action MoveLineDown<CR>
 vnoremap <A-k> :<C-u>action MoveLineUp<CR>
+inoremap <A-j> <ESC>:<C-u>action MoveLineDown<CR>i
+inoremap <A-k> <ESC>:<C-u>action MoveLineUp<CR>i
 nnoremap <A-Down> :<C-u>action MoveLineDown<CR>
 nnoremap <A-Up> :<C-u>action MoveLineUp<CR>
 vnoremap <A-Down> :<C-u>action MoveLineDown<CR>
 vnoremap <A-Up> :<C-u>action MoveLineUp<CR>
+inoremap <A-Down> <ESC>:<C-u>action MoveLineDown<CR>i
+inoremap <A-Up> <ESC>:<C-u>action MoveLineUp<CR>i
 nnoremap <C-f> :<C-u>action ReformatCode<CR>
 
 " ================================================================================================
