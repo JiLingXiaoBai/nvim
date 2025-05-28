@@ -82,7 +82,10 @@ vnoremap <A-Down> :<C-u>action MoveLineDown<CR>
 vnoremap <A-Up> :<C-u>action MoveLineUp<CR>
 inoremap <A-Down> <ESC>:<C-u>action MoveLineDown<CR>i
 inoremap <A-Up> <ESC>:<C-u>action MoveLineUp<CR>i
-nnoremap <C-f> :<C-u>action ReformatCode<CR>
+nnoremap <C-f> :<C-u>action Find<CR>
+inoremap <C-f> <ESC>:<C-u>action Find<CR>
+vnoremap <C-f> :<C-u>action Find<CR>
+
 
 " ================================================================================================
 "️️ Leader Keymaps
@@ -96,7 +99,7 @@ nnoremap <leader>o :<C-u>action RecentProjectListGroup<CR>
 nnoremap <leader>b :<C-u>action ToggleLineBreakpoint<cr>
 nnoremap <leader>m :<C-u>action ToggleBookmark<cr>
 nnoremap <leader>p :<C-u>action ActivateProjectToolWindow<CR>
-nnoremap <leader>f :<C-u>action Find<CR>
+nnoremap <leader>f :<C-u>action ReformatCode<CR>
 nnoremap <leader>sn :action NextSplitter<CR>
 nnoremap <leader>sp :action PrevSplitter<CR>
 nnoremap <leader>sh :action SplitHorizontally<CR>
