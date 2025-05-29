@@ -166,6 +166,17 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = { 'c', 'cpp', 'cs', 'md', 'txt', 'c.snippets', 'cpp.snippets', 'cs.snippets' },
+  callback = function()
+    vim.b.autoformat = true
+    vim.opt_local.expandtab = true
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -759,19 +770,21 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
-        else
+        local filetypes = { c = true, cpp = true, cs = true }
+        if filetypes[vim.bo[bufnr].filetype] then
           return {
             timeout_ms = 500,
             lsp_format = 'fallback',
           }
+        else
+          return nil
         end
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        c = { 'clang-format' },
         cpp = { 'clang-format' },
+        cs = { 'clang-format' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
