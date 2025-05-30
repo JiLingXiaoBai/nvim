@@ -13,6 +13,7 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      update_debounce = 100,
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
