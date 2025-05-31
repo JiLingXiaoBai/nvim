@@ -69,22 +69,22 @@ M.setup = function()
       require 'custom.plugins.telescope',
       require 'custom.plugins.tokyonight',
       require 'custom.plugins.mini',
-      require 'custom.plugins.lint',
       require 'custom.plugins.neo-tree',
       require 'custom.plugins.gitsigns',
       require 'custom.plugins.toggleterm',
       -- require 'custom.plugins.debug',
 
       -- LSP Plugins
-      require 'custom.plugins.lsp.lazydev',
       require 'custom.plugins.lsp.lspconfig',
+      require 'custom.plugins.lsp.lint',
 
       require 'custom.plugins.format.guess-indent',
       require 'custom.plugins.format.indent-line',
       require 'custom.plugins.format.comform',
 
-      require 'custom.plugins.complete.blink-cmp',
       require 'custom.plugins.complete.autopairs',
+      require 'custom.plugins.complete.lazydev',
+      require 'custom.plugins.complete.blink-cmp',
 
       require 'custom.plugins.highlight.todo-comments',
       require 'custom.plugins.highlight.tree-sitter',
