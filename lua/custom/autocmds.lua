@@ -37,7 +37,7 @@ M.setup = function()
   vim.api.nvim_create_autocmd('TermOpen', {
     pattern = 'term://*',
     group = vim.api.nvim_create_augroup('custom-terminalkeymap', { clear = true }),
-    callback = require('custom.keymaps').set_terminal_keymaps,
+    callback = require('custom.keymaps').setup_terminal_keymaps,
   })
 end
 
@@ -90,7 +90,7 @@ M.setup_lsp_attach = function()
       local support_highlight = client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
 
       -- Setup keymaps
-      require('custom.keymaps').set_lsp_keymaps(event.buf, support_inlay_hint)
+      require('custom.keymaps').setup_lsp_keymaps(event.buf, support_inlay_hint)
       -- The following two autocommands are used to highlight references of the
       -- word under your cursor when your cursor rests there for a little while.
       --    See `:help CursorHold` for information about when this is executed
