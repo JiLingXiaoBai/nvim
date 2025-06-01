@@ -1,8 +1,8 @@
 -- [[ Setting Options ]]
-require('custom.options').setup()
+require 'custom.options'
 -- [[ Basic Keymaps ]]
-require('custom.keymaps').setup()
+require 'custom.keymaps'
 -- [[ Auto Commands ]]
-require('custom.autocmds').setup()
+require 'custom.autocmds'
 -- [[ Plugins Installer ]]
-require('custom.plugins-bootstrap').setup()
+require 'custom.plugins-bootstrap'
