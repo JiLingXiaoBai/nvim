@@ -54,9 +54,21 @@ return {
       --   },
       -- },
       -- pickers = {}
+      defaults = {
+        layout_config = {
+          prompt_position = 'top',
+        },
+        sorting_strategy = 'ascending',
+      },
       extensions = {
         ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+          require('telescope.themes').get_dropdown {
+            layout_config = {
+              prompt_position = 'top',
+              height = 0.4,
+              mirror = true,
+            },
+          },
         },
       },
     }
