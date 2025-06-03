@@ -23,15 +23,16 @@ return {
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin
     local statusline = require 'mini.statusline'
+    local has_nerd_font = vim.g.have_nerd_font
     -- set use_icons to true if you have a Nerd Font
-    statusline.setup { use_icons = vim.g.have_nerd_font }
+    statusline.setup { use_icons = has_nerd_font }
 
     -- You can configure sections in the statusline by overriding their
     -- default behavior. For example, here we set the section for
     -- cursor location to LINE:COLUMN
     ---@diagnostic disable-next-line: duplicate-set-field
     statusline.section_location = function()
-      return '%2l:%-2v'
+      return has_nerd_font and '%2l:%-2v|%p\u{f1278}' or '%2l:%-2v|%p'
     end
 
     -- ... and there is more!

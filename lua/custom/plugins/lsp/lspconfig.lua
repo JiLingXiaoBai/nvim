@@ -123,7 +123,9 @@ return {
 
         if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_foldingRange, event.buf) then
           local win = vim.api.nvim_get_current_win()
+          vim.wo[win][0].foldmethod = 'expr'
           vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+          vim.wo.foldlevel = 99
         end
 
         -- The following two autocommands are used to highlight references of the
