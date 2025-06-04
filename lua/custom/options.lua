@@ -84,6 +84,8 @@ vim.o.softtabstop = 4
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.opt.fixeol = false
+
 vim.opt.shell = vim.fn.executable 'pwsh' == 1 and 'pwsh' or 'powershell'
 vim.opt.shellcmdflag =
   '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'

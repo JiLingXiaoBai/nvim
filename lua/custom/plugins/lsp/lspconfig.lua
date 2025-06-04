@@ -215,7 +215,8 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       -- ts_ls = {},
       --
-
+      clangd = {},
+      omnisharp = {},
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
@@ -249,8 +250,6 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'clang-format', -- Used to format Cpp code
-      'clangd',
-      'omnisharp',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
