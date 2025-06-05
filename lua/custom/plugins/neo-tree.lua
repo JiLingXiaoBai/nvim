@@ -31,7 +31,7 @@ return {
       end,
     })
   end,
-  opts = function()
+  config = function()
     local delete_to_trash = function(filename)
       local cmd = 'trash' -- the deafult *nix way of doing things.
       if vim.fn.has 'win32' == 1 and vim.fn.executable 'recycle-bin' == 1 then
@@ -39,7 +39,7 @@ return {
       end
       vim.fn.system { cmd, filename }
     end
-    return {
+    require('neo-tree').setup {
       filesystem = {
         filtered_items = {
           show_hidden_count = false,
