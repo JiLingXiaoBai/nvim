@@ -2,10 +2,10 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   branch = 'main',
+  build = ':TSUpdate',
   config = function()
     local nvim_treesitter = require 'nvim-treesitter'
     nvim_treesitter.setup()
-
     local ensure_installed = { 'bash', 'c', 'cpp', 'c_sharp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
     local pattern = {}
     for _, parser in ipairs(ensure_installed) do
@@ -18,11 +18,11 @@ return {
       end
     end
     vim.api.nvim_create_autocmd('FileType', {
+      group = vim.api.nvim_create_augroup('custom-treesitter-filetype', { clear = true }),
       pattern = pattern,
       callback = function()
         vim.treesitter.start()
       end,
     })
-    vim.api.nvim_exec_autocmds('FileType', {})
   end,
 }
