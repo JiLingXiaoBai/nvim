@@ -6,6 +6,7 @@
 "IdeaVim-EasyMotion
 "IdeaVimExtension
 "CodeGlance Pro
+"Which-key
 
 " ================================================================================================
 " Basic settings
@@ -16,14 +17,16 @@ set scrolloff=5
 set easymotion
 
 set NERDTree
+set surround
+set which-key
 
 set cursorline
+
+set highlightedyank
 
 set showmatch
 
 set nobackup
-
-set surround
 
 set ruler
 
@@ -55,37 +58,29 @@ set notimeout
 " ================================================================================================
 
 " go to somewhere (g in normal mode for goto somewhere)
-nnoremap ga :<C-u>action GotoAction<CR>
-nnoremap gb :<C-u>action JumpToLastChange<CR>
-nnoremap gc :<C-u>action GotoClass<CR>
-nnoremap gd :<C-u>action GotoDeclaration<CR>
-nnoremap gs :<C-u>action GotoSuperMethod<CR>
-nnoremap gi :<C-u>action GotoImplementation<CR>
-nnoremap gf :<C-u>action GotoFile<CR>
-nnoremap gm :<C-u>action GotoSymbol<CR>
-nnoremap gu :<C-u>action ShowUsages<CR>
-nnoremap gt :<C-u>action GotoTest<CR>
-nnoremap gr :<C-u>action RecentFiles<CR>
-nnoremap J :<C-u>action MethodDown<CR>
-nnoremap K :<C-u>action MethodUp<CR>
-nnoremap <S-Down> :<C-u>action EditorCloneCaretBelow<CR>
-nnoremap <S-Up> :<C-u>action EditorCloneCaretAbove<CR>
-nnoremap <A-j> :<C-u>action MoveLineDown<CR>
-nnoremap <A-k> :<C-u>action MoveLineUp<CR>
-vnoremap <A-j> :<C-u>action MoveLineDown<CR>
-vnoremap <A-k> :<C-u>action MoveLineUp<CR>
-inoremap <A-j> <ESC>:<C-u>action MoveLineDown<CR>i
-inoremap <A-k> <ESC>:<C-u>action MoveLineUp<CR>i
-nnoremap <A-Down> :<C-u>action MoveLineDown<CR>
-nnoremap <A-Up> :<C-u>action MoveLineUp<CR>
-vnoremap <A-Down> :<C-u>action MoveLineDown<CR>
-vnoremap <A-Up> :<C-u>action MoveLineUp<CR>
-inoremap <A-Down> <ESC>:<C-u>action MoveLineDown<CR>i
-inoremap <A-Up> <ESC>:<C-u>action MoveLineUp<CR>i
-nnoremap <C-f> :<C-u>action Find<CR>
-inoremap <C-f> <ESC>:<C-u>action Find<CR>
-vnoremap <C-f> :<C-u>action Find<CR>
-
+nmap ga <Action>(GotoAction)
+nmap gb <Action>(JumpToLastChange)
+nmap gc <Action>(GotoClass)
+nmap gd <Action>(GotoDeclaration)
+nmap gs <Action>(GotoSuperMethod)
+nmap gi <Action>(GotoImplementation)
+nmap gf <Action>(GotoFile)
+nmap gm <Action>(GotoSymbol)
+nmap gu <Action>(ShowUsages)
+nmap gt <Action>(GotoTest)
+nmap gr <Action>(RecentFiles)
+nmap go <Action>(FileStructurePopup
+nmap J <Action>(MethodDown)
+nmap K <Action>(MethodUp)
+nmap <S-Down> <Action>(EditorCloneCaretBelow)
+nmap <S-Up> <Action>(EditorCloneCaretAbove)
+map <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)
+map <C-f> <Action>(Find)
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
 
 " ================================================================================================
 "️️ Leader Keymaps
@@ -94,14 +89,13 @@ let mapleader = " "
 nnoremap <leader>h gT
 nnoremap <leader>l gt
 nnoremap <leader>nh :<C-u>nohl<CR>
-nnoremap <leader>r :<C-u>action RenameElement<CR>
-nnoremap <leader>o :<C-u>action RecentProjectListGroup<CR>
-nnoremap <leader>b :<C-u>action ToggleLineBreakpoint<cr>
-nnoremap <leader>m :<C-u>action ToggleBookmark<cr>
-nnoremap <leader>p :<C-u>action ActivateProjectToolWindow<CR>
-nnoremap <leader>f :<C-u>action ReformatCode<CR>
-nnoremap <leader>sn :action NextSplitter<CR>
-nnoremap <leader>sp :action PrevSplitter<CR>
-nnoremap <leader>sh :action SplitHorizontally<CR>
-nnoremap <leader>sv :action SplitVertically<CR>
-nnoremap <leader>sc :action Unsplit<CR>
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>o <Action>(RecentProjectListGroup)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>m <Action>(ToggleBookmark)
+nmap <leader>f <Action>(ReformatCode)
+nmap <leader>sn <Action>(NextSplitter)
+nmap <leader>sp <Action>(PrevSplitter)
+nmap <leader>sh <Action>(SplitHorizontally)
+nmap <leader>sv <Action>(SplitVertically)
+nmap <leader>sc <Action>(Unsplit)

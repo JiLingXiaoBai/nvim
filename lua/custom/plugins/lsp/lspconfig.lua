@@ -186,7 +186,6 @@ return {
         end,
       },
     }
-
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
     --
@@ -196,6 +195,37 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    --
+
+    local function find_solution_file()
+      local solution_files = vim.fn.glob('*.sln', true, true)
+      if #solution_files > 0 then
+        return solution_files
+      end
+      return {}
+    end
+
+    local function find_project_file()
+      local project_files = vim.fn.glob('*.csproj', true, true)
+      if #project_files > 0 then
+        return project_files
+      end
+      return {}
+    end
+
+    local function get_omnisharp_root()
+      local ret = {'.git'}
+      local sln = find_solution_file()
+      for _, value in ipairs(sln) do
+        table.insert(ret, value)
+      end
+      local csproj = find_project_file()
+      for _, value in ipairs(csproj) do
+        table.insert(ret, value)
+      end
+      return ret
+    end
+
     local servers = {
       -- clangd = {},
       -- gopls = {},
@@ -210,7 +240,18 @@ return {
       -- ts_ls = {},
       --
       clangd = {},
-      omnisharp = {},
+      omnisharp = {
+        root_markers = get_omnisharp_root(),
+        settings = {
+          FormattingOptions = {
+            EnableEditorConfigSupport = false,
+            OrganizeImports = true,
+          },
+          RoslynExtensionsOptions = {
+            EnableAnalyzersSupport = true,
+          },
+        },
+      },
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
