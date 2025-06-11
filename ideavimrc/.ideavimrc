@@ -19,6 +19,7 @@ set easymotion
 set NERDTree
 set surround
 set which-key
+set commentary
 
 set cursorline
 
