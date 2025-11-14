@@ -90,11 +90,11 @@ let mapleader = " "
 nnoremap <leader>h gT
 nnoremap <leader>l gt
 nnoremap <leader>nh :<C-u>nohl<CR>
+map <leader>f <Action>(ReformatCode)
 nmap <leader>r <Action>(RenameElement)
 nmap <leader>o <Action>(RecentProjectListGroup)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
 nmap <leader>m <Action>(ToggleBookmark)
-nmap <leader>f <Action>(ReformatCode)
 nmap <leader>sn <Action>(NextSplitter)
 nmap <leader>sp <Action>(PrevSplitter)
 nmap <leader>sh <Action>(SplitHorizontally)
