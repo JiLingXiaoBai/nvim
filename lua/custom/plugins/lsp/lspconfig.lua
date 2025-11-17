@@ -73,6 +73,8 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
+        map('H', vim.lsp.buf.hover, 'Hover Documentation')
+
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -273,6 +275,8 @@ return {
     for server_name, config in pairs(servers) do
       vim.lsp.config(server_name, config)
     end
+
+    vim.lsp.inlay_hint.enable(true)
 
     -- NOTE: Some servers may require an old setup until they are updated. For the full list refer here: https://github.com/neovim/nvim-lspconfig/issues/#3705
     -- These servers will have to be manually set up with require("lspconfig").server_name.setup{}
