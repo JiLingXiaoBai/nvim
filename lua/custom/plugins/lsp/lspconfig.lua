@@ -197,40 +197,11 @@ return {
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     --
 
-    local function find_solution_file()
-      local solution_files = vim.fn.glob('*.sln', true, true)
-      if #solution_files > 0 then
-        return solution_files
-      end
-      return {}
-    end
-
-    local function find_project_file()
-      local project_files = vim.fn.glob('*.csproj', true, true)
-      if #project_files > 0 then
-        return project_files
-      end
-      return {}
-    end
-
-    local function get_omnisharp_root()
-      local ret = {'.git'}
-      local sln = find_solution_file()
-      for _, value in ipairs(sln) do
-        table.insert(ret, value)
-      end
-      local csproj = find_project_file()
-      for _, value in ipairs(csproj) do
-        table.insert(ret, value)
-      end
-      return ret
-    end
-
     local servers = {
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},
-      -- rust_analyzer = {},
+      rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
       -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -240,18 +211,6 @@ return {
       -- ts_ls = {},
       --
       clangd = {},
-      omnisharp = {
-        root_markers = get_omnisharp_root(),
-        settings = {
-          FormattingOptions = {
-            EnableEditorConfigSupport = false,
-            OrganizeImports = true,
-          },
-          RoslynExtensionsOptions = {
-            EnableAnalyzersSupport = true,
-          },
-        },
-      },
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
@@ -289,7 +248,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'clang-format', -- Used to format Cpp code
-      'csharpier', -- Used to format CSharp code
+      'rust_analyzer',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

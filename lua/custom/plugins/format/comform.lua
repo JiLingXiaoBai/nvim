@@ -33,8 +33,7 @@ return {
       lua = { 'stylua' },
       c = { 'clang_format' },
       cpp = { 'clang_format' },
-      -- TODO: use csharpier to format csharp code
-      -- cs = { 'csharpier' },
+      rs = { 'rust_analyzer' },
       --
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
