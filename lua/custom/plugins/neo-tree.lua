@@ -42,10 +42,10 @@ return {
     require('neo-tree').setup {
       filesystem = {
         filtered_items = {
-          show_hidden_count = false,
+          show_hidden_count = true,
           visible = false,
-          hide_dotfiles = true,
-          hide_gitignored = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
           hide_by_pattern = {
             '*.meta',
           },

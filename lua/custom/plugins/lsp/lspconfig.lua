@@ -203,7 +203,47 @@ return {
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},
-      rust_analyzer = {},
+      rust_analyzer = {
+        settings = {
+          ['rust-analyzer'] = {
+            assist = {
+              importEnforceGranularity = true,
+              importPrefix = 'by_self',
+            },
+            checkOnSave = {
+              enable = true,
+              command = 'clippy',
+              extraArgs = { '--all', '--', '-W', 'clippy::all' },
+            },
+            procMacro = {
+              enable = true,
+            },
+            cargo = {
+              allFeatures = true,
+              buildScripts = { enable = true },
+              loadOutDirsFromCheck = true,
+            },
+            completion = {
+              autoimport = { enable = true },
+              postfix = { enable = true },
+            },
+            inlayHints = {
+              typeHints = true,
+              chainingHints = true,
+            },
+            diagnostics = {
+              enable = true,
+              experimental = { enable = true },
+              disabled = { 'unresolved-proc-macro' },
+              warningsAsHint = { 'dead-code' },
+            },
+            imports = {
+              granularity = { group = 'module' },
+              prefix = 'self',
+            },
+          },
+        },
+      },
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
       -- Some languages (like typescript) have entire language plugins that can be useful:
