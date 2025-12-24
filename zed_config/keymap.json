@@ -1,0 +1,42 @@
+﻿// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "space l": "vim::GoToTab",
+      "space h": "vim::GoToPreviousTab",
+      "space r": "editor::Rename",
+      "space f": "editor::Format",
+      "space g": "git_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space d": "workspace::CloseAllDocks",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {},
+  },
+]
