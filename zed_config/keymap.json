@@ -7,12 +7,6 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      "shift shift": "file_finder::Toggle",
-    },
-  },
-  {
     "context": "Editor",
     "bindings": {
       "alt-j": "editor::MoveLineDown",
@@ -22,6 +16,7 @@
   {
     "context": "((VimControl && !menu) || (!Editor && !Terminal))",
     "bindings": {
+      "shift shift": "file_finder::Toggle",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-j": "workspace::ActivatePaneDown",
