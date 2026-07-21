@@ -7,6 +7,52 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
+  "title_bar": {
+    "show_branch_status_icon": false
+  },
+  "status_bar": {
+    "show_active_file": true
+  },
+  "vim": {
+    "highlight_on_yank_duration": 200,
+    "toggle_relative_line_numbers": false
+  },
+  "toolbar": {
+    "code_actions": true
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "relative_line_numbers": "disabled",
+  "ui_font_family": "Maple Mono NF CN",
+  "buffer_font_family": "Maple Mono NF CN",
+  "terminal": {
+    "shell": "system",
+    "font_family": "Maple Mono NF CN"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "default_model": {
+      "enable_thinking": true,
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v4-pro"
+    },
+    "model_parameters": []
+  },
   "vim_mode": true,
   "base_keymap": "VSCode",
   "icon_theme": {
@@ -15,7 +61,7 @@
     "dark": "Zed (Default)",
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 16.0,
   "theme": {
     "mode": "dark",
     "light": "One Dark",
@@ -42,3 +88,4 @@
     "scroll_debounce_ms": 50,
   },
 }
+
